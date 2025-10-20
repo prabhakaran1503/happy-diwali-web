@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Diwali Wishes</title>
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #001133, #000022);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  /* === Glowing Title === */
+  h1 {
+    font-size: 3em;
+    color: #80d4ff;
+    text-shadow: 0 0 15px #80d4ff, 0 0 40px #00ccff, 0 0 80px #66ffff;
+    animation: glow 2s ease-in-out infinite alternate;
+    margin-bottom: 20px;
+  }
+
+  @keyframes glow {
+    from { text-shadow: 0 0 10px #66ccff, 0 0 20px #00bfff; }
+    to { text-shadow: 0 0 25px #66ffff, 0 0 60px #99ffff; }
+  }
+
+  p {
+    font-size: 1.2em;
+    color: #cceeff;
+    max-width: 600px;
+    margin-bottom: 30px;
+  }
+
+  /* === Video Card === */
+    .video-container {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px 5px #00ccff;
+    cursor: pointer;
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.5em;
+    text-shadow: 0 0 10px #00ccff;
+    pointer-events: auto;
+    cursor: pointer;
+  }
+
+  /* === Floating Diyas === */
+  .diya {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle at center, #ffd700 10%, #ff9900 70%, #cc6600);
+    border-radius: 50%;
+    box-shadow: 0 0 25px 8px #ffcc00;
+    animation: flicker 1.5s infinite alternate, float 6s ease-in-out infinite;
+  }
+
+  .diya:nth-child(1) { bottom: 40px; left: 10%; animation-delay: 0s; }
+  .diya:nth-child(2) { bottom: 60px; right: 15%; animation-delay: 1s; }
+  .diya:nth-child(3) { bottom: 80px; left: 50%; animation-delay: 2s; }
+
+  @keyframes flicker {
+    0% { box-shadow: 0 0 20px 5px #ffd700; }
+    100% { box-shadow: 0 0 40px 12px #ffea00; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  /* === Footer === */
+  .footer {
+    margin-top: 30px;
+    font-size: 1em;
+    color: #cceeff;
+    opacity: 0.8;
+  }
+
+</style>
+</head>
+<body>
+
+  <h1>💙✨ Happy Diwali ✨💙</h1>
+  <p>May this festival of lights bring joy, peace, and prosperity to you and your family. Let your life shine brighter than ever before! 🪔</p>
+
+  <!-- Video in Small Frame -->
+  <div class="video-container" id="videoCard">
+    <video id="diwaliVideo" poster="poster.jpg">
+      <source src="happy.mp4" type="video/mp4"  width="600" height="400">
+      Your browser does not support the video tag.
+    </video>
+    <div class="overlay-text" id="playButton">▶ Click to Play</div>
+  </div>
+
+
+  <!-- Footer -->
+  <div class="footer">... ❤️❤️❤️ ...</div>
+
+<script>
+  const video = document.getElementById('diwaliVideo');
+  const playButton = document.getElementById('playButton');
+  const videoCard = document.getElementById('videoCard');
+
+  playButton.addEventListener('click', () => {
+    if(video.paused){
+      video.play();
+      playButton.style.display = 'none';
+    }
+  });
+
+  video.addEventListener('click', () => {
+    if(!video.paused){
+      video.pause();
+      playButton.style.display = 'block';
+    }
+  });
+</script>
+
+</body>
+</html>
