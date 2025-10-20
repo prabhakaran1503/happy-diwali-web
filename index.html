@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Diwali Wishes</title>
+<style>
+  /* === Background Setup === */
+  body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at center, #002b80, #001133 80%);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
+  }
+
+  /* === Glowing Title === */
+  h1 {
+    font-size: 3.5em;
+    color: #80d4ff;
+    text-shadow: 0 0 15px #80d4ff, 0 0 40px #00ccff, 0 0 80px #66ffff;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from { text-shadow: 0 0 10px #66ccff, 0 0 20px #00bfff; }
+    to { text-shadow: 0 0 25px #66ffff, 0 0 60px #99ffff; }
+  }
+
+  /* === Message === */
+  p {
+    font-size: 1.3em;
+    max-width: 700px;
+    color: #e0f7ff;
+    margin-top: 15px;
+    animation: fadeIn 3s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  /* === Floating Diyas === */
+  .diya {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle at center, #ffd700 10%, #ff9900 70%, #cc6600);
+    border-radius: 50%;
+    box-shadow: 0 0 25px 8px #ffcc00;
+    animation: flicker 1.5s infinite alternate, float 6s ease-in-out infinite;
+  }
+
+  .diya:nth-child(1) { bottom: 60px; left: 15%; animation-delay: 0s; }
+  .diya:nth-child(2) { bottom: 70px; right: 20%; animation-delay: 1s; }
+  .diya:nth-child(3) { bottom: 100px; left: 50%; animation-delay: 2s; }
+
+  @keyframes flicker {
+    0% { box-shadow: 0 0 20px 5px #ffd700; }
+    100% { box-shadow: 0 0 40px 12px #ffea00; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  /* === Fireworks === */
+  .firework {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 
+      0 0 0 2px #00ccff,
+      0 0 10px #00ccff,
+      0 0 20px #66ffff;
+    animation: explode 1.5s ease-out infinite;
+  }
+
+  .firework:nth-child(4) { left: 20%; top: 30%; animation-delay: 0s; }
+  .firework:nth-child(5) { left: 70%; top: 40%; animation-delay: 0.5s; }
+  .firework:nth-child(6) { left: 50%; top: 25%; animation-delay: 1s; }
+
+  @keyframes explode {
+    0% { transform: scale(0.5); opacity: 1; }
+    50% { transform: scale(2); opacity: 1; }
+    100% { transform: scale(3); opacity: 0; }
+  }
+
+  /* === Footer === */
+  .footer {
+    position: absolute;
+    bottom: 15px;
+    font-size: 1.1em;
+    color: #cceeff;
+    opacity: 0.8;
+    animation: fadeIn 4s ease forwards;
+  }
+
+  /* === Floating Stars Background === */
+  .star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #99e6ff;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: twinkle 2s infinite alternate;
+  }
+
+  @keyframes twinkle {
+    from { opacity: 0.2; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1.2); }
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- Floating Diyas -->
+  <div class="diya"></div>
+  <div class="diya"></div>
+  <div class="diya"></div>
+
+  <!-- Fireworks -->
+  <div class="firework"></div>
+  <div class="firework"></div>
+  <div class="firework"></div>
+
+  <!-- Title & Message -->
+  <h1>💙✨ Wish You a Very Happy Diwali ✨💙</h1>
+  <p>May this festival of lights bring joy, peace, and prosperity to you and your family.  
+     Let your life shine brighter than ever before! 🪔</p>
+
+  <!-- Stars -->
+  <script>
+    // Create random floating stars
+    for(let i=0; i<50; i++){
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.top = Math.random()*100 + 'vh';
+      star.style.left = Math.random()*100 + 'vw';
+      star.style.animationDelay = Math.random()*3 + 's';
+      document.body.appendChild(star);
+    }
+  </script>
+
+  <!-- Footer -->
+  <div class="footer">... ❤️❤️❤️ ...</div>
+
+</body>
+</html>
